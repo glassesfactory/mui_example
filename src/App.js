@@ -8,9 +8,15 @@ import Header from './components/header';
 import MyForm from './components/myform';
 import FormProgress from './components/formprogress';
 import List from './components/list';
-import Detail from './components/detail'
+import Detail from './components/detail';
+import S3Uploader from './s3uploader';
+import Config from './config.json'
 
 injectTapEventPlugin();
+S3Uploader.setup({
+  accessKeyId: Config.s3_key,
+  secretAccessKey: Config.s3_secret
+});
 
 const NoMatch = React.createClass({
   componentDidMount(){
